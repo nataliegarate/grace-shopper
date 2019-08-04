@@ -13,7 +13,6 @@ module.exports = router
 router.get('/', async (req, res, next) => {
   try {
     if (req.user === undefined) {
-      console.log('REQ.SESSION IS: ', req.session)
       res.json(req.session.cart)
     } else {
       const userId = req.user.id
@@ -71,9 +70,7 @@ router.post('/', async (req, res, next) => {
         for (let i = 0; i < req.session.cart.length; i++) {
           let oldOrder = req.session.cart[i]
           if (oldOrder.id === newOrder.id) {
-            console.log('THIS IS TRUE')
             const newSum = Number(oldOrder.quantity) + Number(newOrder.quantity)
-            console.log('This is the new sum', newSum)
             oldOrder.quantity = String(newSum)
             req.session.save()
           }
