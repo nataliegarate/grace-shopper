@@ -3,14 +3,38 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {getAllCupcakes} from '../store/cupcake'
 import Navbar from './navbar'
+// import { postCartThunk } from '../store';
+
 class AllCupcakes extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
+
+    // this.handleSubmit = this.handleSubmit.bind(this)
+    // this.handleChange = this.handleChange.bind(this)
   }
   componentDidMount() {
     this.props.getAllCupcakes()
   }
+
+  // handleChange(event) {
+  //   console.log('EVENT NAME',event.target.name)
+  //   console.log('EVENT VALUE ',event.target.value)
+  //   console.log(this.state)
+  //   this.setState({
+  //     quantity: event.target.value,
+  //   })
+  //   console.log(this.state)
+  // }
+
+  // handleSubmit(event) {
+  //   event.preventDefault()
+  //   this.props.postCartThunk(this.state)
+  //   this.setState({
+  //     quantity: 0,
+  //     id: 0
+  //   })
+  // }
 
   render() {
     const cupcakes = this.props.cupcakes
@@ -25,7 +49,18 @@ class AllCupcakes extends React.Component {
                 <img className="cupcakes" src={cupcake.imageUrl} />
                 <p> {cupcake.name} </p>
               </Link>
-              <p> {cupcake.price} $</p>
+              <p> ${cupcake.price} </p>
+              {/* <form onSubmit={this.handleSubmit}>
+                <input
+                  type="number"
+                  name={cupcake.id}
+                  min="0"
+                  max="100"
+                  onChange={this.handleChange}
+                  value= {this.state.quantity}
+                />
+                <button type="submit">Add to Cart</button>
+              </form> */}
             </div>
           ))}
         </div>
@@ -43,6 +78,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllCupcakes: () => dispatch(getAllCupcakes())
+    // postCartThunk: () => dispatch(postCartThunk)
   }
 }
 

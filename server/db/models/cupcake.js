@@ -7,11 +7,16 @@ const Cupcake = db.define('cupcake', {
     allowNull: false
   },
   price: {
-    type: Sequelize.DECIMAL,
+    type: Sequelize.INTEGER,
     allowNull: false
   },
   imageUrl: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    defaultValue:
+      'https://cdn1.iconfinder.com/data/icons/restaurants-and-food/92/cupcake-512.png',
+    validate: {
+      isUrl: true
+    }
   },
   description: {
     type: Sequelize.TEXT

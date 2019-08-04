@@ -8,6 +8,7 @@ import AllCupcakes from './components/AllCupcakes'
 import SingleCupcake from './components/oneCupcake'
 import CartView from './components/CartView'
 import CheckOut from './components/checkout'
+import thankYou from './components/thankYou'
 
 /**
  * COMPONENT
@@ -33,11 +34,11 @@ class Routes extends Component {
          )}
         {/* Displays our Login component as a fallback */}
         <Route exact path="/" component={AllCupcakes} />
-        <Route exact path="/home" component={UserHome} />
-        <Route exact path="/cupcakes" component={AllCupcakes} />
+        <Route exact path="/profile" component={UserHome} />
+        {/* <Route exact path="/cupcakes" component={AllCupcakes} /> */}
         <Route exact path="/cupcakes/:id" component={SingleCupcake} />
         <Route exact path="/cart" component={CartView} />
-        <Route exact path="/natalie" component={Login} />
+        <Route exact path="/thankYou" component={thankYou} />
 
         {/* DELETE LATTTTERRRRRR */}
 

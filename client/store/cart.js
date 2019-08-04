@@ -8,6 +8,8 @@ import history from '../history'
 const POST_ORDER = 'POST_ORDER'
 const GET_ORDER = 'GET_ORDER'
 const DELETE_ORDER = 'DELETE-ORDER'
+const COMPLETE_ORDER = 'COMPLETE_ORDER'
+const CLEAR_CART = 'CLEAR_CART'
 /**
  * INITIAL STATE
  */
@@ -19,6 +21,15 @@ const initialCartstate = {
 /**
  * ACTION CREATORS
  */
+
+const clearCart = () => ({
+  type: CLEAR_CART
+})
+
+const completedOrder = () => ({
+  type: COMPLETE_ORDER
+})
+
 const postedOrder = order => ({
   type: POST_ORDER,
   order
@@ -36,6 +47,25 @@ const deleteOrder = cupcakeId => ({
 /**
  * THUNK CREATORS
  */
+
+export const clearCartThunk = () => async dispatch => {
+  try {
+    await axios.delete('/api/cart/empty')
+    dispatch(clearCart())
+  } catch (err) {
+    console.log('error clearing cart', err)
+  }
+}
+
+export const completeOrderThunk = () => async dispatch => {
+  try {
+    console.log('HELLO')
+    await axios.put('/api/cart/checkout')
+    dispatch(completedOrder())
+  } catch (err) {
+    console.log('error completing purchase', err)
+  }
+}
 
 export const postCartThunk = order => async dispatch => {
   try {
@@ -59,8 +89,8 @@ export const getCartThunk = () => async dispatch => {
 
 export const deleteOrderThunk = cupcakeId => async dispatch => {
   try {
+    await axios.delete(`/api/cart/${cupcakeId}`)
     dispatch(deleteOrder(cupcakeId))
-    const res = await axios.delete(`/api/cart/${cupcakeId}`)
   } catch (error) {
     console.log('not deleted, try again, error >>', error)
   }
@@ -80,6 +110,10 @@ export default function cartReducer(state = initialCartstate, action) {
         ...state,
         myOrder: state.myOrder.filter(order => order.id !== action.cupcakeId)
       }
+    case COMPLETE_ORDER:
+      return {...initialCartstate}
+    case CLEAR_CART:
+      return {...initialCartstate}
     default:
       return state
   }

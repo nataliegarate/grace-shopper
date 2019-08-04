@@ -10,16 +10,17 @@ const Navbar = ({handleClick, isLoggedIn}, props) => {
       <h1>Best Cupcakes by fantasticFour</h1>
       <div id="links" />
       <nav id="links">
-        <Link to="/cupcakes">Cupcakes</Link>
+        <Link to="/">Cupcakes</Link>
         <div id="cartLink">
-          <Link to="/cart">Cart</Link>
-          <img className="cart" src="/images/shopping_bag.png" />
+          <Link to="/cart">
+            Cart <img className="cart" src="/images/shopping_bag.png" />
+          </Link>
         </div>
 
         {isLoggedIn ? (
           <div>
             {/* The navbar will show these links after you log in */}
-            <Link to="/home">Home</Link>
+            <Link to="/profile">Profile</Link>
             <a href="#" onClick={handleClick}>
               Logout
             </a>
