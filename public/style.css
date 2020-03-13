@@ -7,6 +7,10 @@ p {
   color: #000;
 }
 
+a {
+  text-decoration: none;
+}
+
 #app header {
   height: 93px;
   width: 100%;
@@ -43,7 +47,6 @@ p {
 }
 
 #app header a {
-  text-decoration: none;
   font-size: 14px;
   font-weight: 700px;
   letter-spacing: 1.16px;
@@ -86,11 +89,13 @@ p {
   padding: 50px;
   border-bottom: 0.5px lightgray solid;
   border-top: 0.5px lightgray solid;
-
-  /* flex-wrap: wrap; */
 }
 #home-header-text {
   flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #home-header img {
   height: 200px;
@@ -104,21 +109,85 @@ p {
   text-transform: uppercase;
 }
 #allCupcakesContainer {
+  margin-top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  width: 1200px;
+}
+#allCupcakesContainer a {
+  width: 230px;
+  padding: 20px;
+  margin: 0px 20px;
+  margin-bottom: 50px;
+  border: 1px solid #f6a2b6;
+  height: 360px;
+  padding: 10px;
 }
 .cupBox {
-  flex-basis: 33%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.cupcakes {
+.cupBox img {
   width: 200px;
   height: auto;
+  border-radius: 50%;
+  padding: 5px;
+  padding-top: 10px;
+}
+.cupcake-title {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  padding-top: 10px;
+  margin: 0px;
+}
+
+.cupcake-availability {
+  color: #d31245;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 1.31px;
+  line-height: 30px;
+  margin: 4px;
+}
+
+.cupcake-text {
+  padding: 20px;
+}
+
+.cupcake-description {
+  color: #4a4a4a;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 18px;
+}
+@media only screen and (max-width: 1140px) {
+  /* #allCupcakesContainer {
+    width: 900px;
+  } */
+  #allCupcakesContainer {
+    margin-top: 40px;
+    width: 1000px;
+  }
+  #allCupcakesContainer a {
+    width: 170px;
+    height: 310px;
+  }
+  #allCupcakesContainer img {
+    height: 150px;
+    width: auto;
+  }
+  .cupcake-text {
+    padding: 10px;
+  }
 }
 
 @media only screen and (max-width: 1020px) {
@@ -149,6 +218,11 @@ p {
   }
   #home-header p {
     margin: 1px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  #allCupcakesContainer {
+    width: 800px;
   }
 }
 
@@ -200,19 +274,53 @@ p {
 
   #home-header {
     padding: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0px;
   }
   #home-header-text p {
     font-size: 11px;
-    width: 400px;
+    width: 70%;
+    margin: 0px;
   }
   #home-header span {
-    font-size: 13px;
+    font-size: 15px;
   }
   #home-header p {
     margin: 0px;
   }
   #home-header img {
-    height: 135px;
+    height: 150px;
+  }
+  #allCupcakesContainer {
+    width: 100%;
+  }
+  .cupBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: inherit;
+  }
+  #allCupcakesContainer a {
+    width: 80%;
+    padding: 5px;
+    margin: 0px 20px;
+    margin-bottom: 20px;
+    height: 275px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (max-width: 450px) {
+    #home-header img {
+      height: 120px;
+    }
+    #home-header-text {
+      width: 120%;
+    }
   }
 }

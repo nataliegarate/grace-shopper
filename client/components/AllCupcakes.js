@@ -21,15 +21,16 @@ class AllCupcakes extends React.Component {
         <HomeHeader />
         <div id="allCupcakesContainer">
           {cupcakes.map(cupcake => (
-            <div key={cupcake.id} className="cupBox">
-              <Link to={`/cupcake/${cupcake.id}`}>
-                <img className="cupcakes" src={cupcake.imageUrl} />
-                <p id="space-below">
-                  {' '}
-                  {cupcake.name} | ${cupcake.price}
-                </p>
-              </Link>
-            </div>
+            <Link to={`/cupcake/${cupcake.id}`}>
+              <div key={cupcake.id} className="cupBox">
+                <img src={cupcake.imageUrl} />
+                <span className="cupcake-text">
+                  <p className="cupcake-title"> {cupcake.name}</p>
+                  <p className="cupcake-availability"> Available Daily!</p>
+                  <p className="cupcake-description"> {cupcake.description}</p>
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
