@@ -23,7 +23,7 @@ class CartView extends React.Component {
     return (
       <div>
         <h2 className="headers">Your Shopping Cart</h2>
-        <div>
+        <div className="cart">
           {this.props.order.map((cupcakeObj, i) => (
             <div id="cupcake-container" key={i}>
               <img src={cupcakeObj.imageUrl} className="cupcakes" />
@@ -33,37 +33,37 @@ class CartView extends React.Component {
                 <p>
                   {' '}
                   Quantity: {cupcakeObj.quantity}{' '}
-                  {cupcakeObj.quantity === 1 ? 'cupcake' : 'cupcakes'} (${cupcakeObj.price *
-                    cupcakeObj.quantity})
+                  {cupcakeObj.quantity === 1 ? 'cupcake' : 'cupcakes'} ($
+                  {cupcakeObj.price * cupcakeObj.quantity})
                 </p>
-
                 <button
                   type="submit"
                   onClick={() => this.props.deleteOrderThunk(cupcakeObj.id)}
-                  className="remove"
+                  className="small-button"
                 >
-                  Remove order
+                  Remove Order
                 </button>
               </div>
             </div>
           ))}
+          <button
+            type="button"
+            className="small-button"
+            onClick={() => this.props.clearCartThunk()}
+          >
+            Empty Cart
+          </button>
           <h3 id="total">Your Total: ${total(this.props.order)} </h3>
+
           {this.props.order.length > 0 && (
             <div>
+              <br />
+
               <Link to="/checkout">
                 <button type="button" className="confirmButton">
                   Checkout
                 </button>
               </Link>
-              <br />
-              <br />
-              <button
-                type="button"
-                onClick={() => this.props.clearCartThunk()}
-                id="bottom-margin"
-              >
-                Clear your cart
-              </button>
             </div>
           )}
         </div>

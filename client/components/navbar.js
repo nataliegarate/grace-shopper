@@ -3,53 +3,42 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
+import './navbar.css'
+
 const Navbar = ({handleClick, isLoggedIn}, props) => {
   return (
-    <div id="white">
-      <h1 className="cursive" id="main-header">
-        Best Cupcakes
-      </h1>
-      <h2 className="cursive" id="sub-heading">
-        by Fantastic Four
-      </h2>
-      <div id="links" />
-      <nav id="links">
-        <Link to="/" className="navMarg">
-          Cupcakes
-        </Link>
-        {/* <div> */}
-        <Link to="/cart" className="navMarg" id="cartLink">
-          Cart
-          <img
-            id="cart"
-            src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/shopping-circle-blue-512.png"
-          />
-        </Link>
+    <header role="banner">
+      <div id="links-left">
+        <Link to="/">CUPCAKES</Link>
+        <Link to="/cart">CART</Link>
+      </div>
+      <h1 id="title-center">Best Cupcakes</h1>
+      <div id="links-right">
         {/* </div> */}
         {isLoggedIn ? (
-          <div>
+          <>
             {/* The navbar will show these links after you log in */}
-            <Link to="/profile" className="navMarg">
+            <Link to="/profile" className="nav-button">
               Profile
             </Link>
-            <a href="#" onClick={handleClick}>
+            <a href="#" onClick={handleClick} className="nav-button">
               Logout
             </a>
-          </div>
+          </>
         ) : (
-          <div>
+          <>
             {/* The navbar will show these links before you log in */}
-            <Link to="/login" className="navMarg">
+            <Link to="/login" className="nav-button">
               Login
             </Link>
-            <Link to="/signup" className="navMarg">
+            <Link to="/signup" className="nav-button">
               Sign Up
             </Link>
-          </div>
+          </>
         )}
-      </nav>
+      </div>
       {/* <hr /> */}
-    </div>
+    </header>
   )
 }
 /**

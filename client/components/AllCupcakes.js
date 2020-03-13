@@ -16,9 +16,8 @@ class AllCupcakes extends React.Component {
   render() {
     const cupcakes = this.props.cupcakes
     return (
-      <div>
-        {/* <Navbar /> */}
-        <h3 className="headers">Our Cupcakes</h3>
+      <div className="landing-page">
+        {/* <h3 className="headers">Our Cupcakes</h3> */}
         <div id="allCupcakesContainer">
           {cupcakes.map(cupcake => (
             <div key={cupcake.id} className="cupBox">

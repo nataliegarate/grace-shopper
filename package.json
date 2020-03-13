@@ -1,7 +1,7 @@
 {
-  "name": "boilermaker",
+  "name": "best-cupcakes",
   "version": "2.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "A website that sells delicious cupcakes",
   "engines": {
     "node": ">= 7.0.0"
   },

@@ -6,7 +6,7 @@ import Routes from './routes'
 
 const App = () => {
   return (
-    <div>
+    <>
       <head>
         <link
           href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
@@ -16,7 +16,7 @@ const App = () => {
       <Navbar />
       <Routes />
       <Footer />
-    </div>
+    </>
   )
 }
 
