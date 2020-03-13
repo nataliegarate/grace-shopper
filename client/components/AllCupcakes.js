@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {getAllCupcakes} from '../store/cupcake'
 import Navbar from './navbar'
+import HomeHeader from './homeHeader'
 
 class AllCupcakes extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class AllCupcakes extends React.Component {
     const cupcakes = this.props.cupcakes
     return (
       <div className="landing-page">
-        {/* <h3 className="headers">Our Cupcakes</h3> */}
+        <HomeHeader />
         <div id="allCupcakesContainer">
           {cupcakes.map(cupcake => (
             <div key={cupcake.id} className="cupBox">

@@ -1,15 +1,18 @@
 #app {
   font-family: 'Montserrat', sans-serif;
+  color: #7c3a00;
+}
+p {
+  line-height: 1.57;
+  color: #000;
 }
 
 #app header {
-  color: #7c3a00;
   height: 93px;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  border-bottom: 0.5px lightgray solid;
 }
 
 #title-center,
@@ -71,8 +74,35 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex-direction: column;
 }
 
+#home-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #f8f8f8;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  border-bottom: 0.5px lightgray solid;
+  border-top: 0.5px lightgray solid;
+
+  /* flex-wrap: wrap; */
+}
+#home-header-text {
+  flex-basis: 30%;
+}
+#home-header img {
+  height: 200px;
+  width: auto;
+}
+#home-header span {
+  color: #000;
+  font-size: 30px;
+  letter-spacing: 1.5;
+  line-height: 40px;
+  text-transform: uppercase;
+}
 #allCupcakesContainer {
   display: flex;
   flex-direction: row;
@@ -103,6 +133,22 @@
   }
   #title-center {
     font-size: 40px;
+  }
+
+  #home-header {
+    padding: 20px;
+  }
+  #home-header-text p {
+    font-size: 13px;
+  }
+  #home-header span {
+    font-size: 22px;
+  }
+  #home-header img {
+    height: 175px;
+  }
+  #home-header p {
+    margin: 1px;
   }
 }
 
@@ -146,5 +192,27 @@
   }
   #links-right {
     order: 3;
+  }
+  #home-header-text {
+    order: 2;
+    text-align: center;
+  }
+
+  #home-header {
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+  #home-header-text p {
+    font-size: 11px;
+    width: 400px;
+  }
+  #home-header span {
+    font-size: 13px;
+  }
+  #home-header p {
+    margin: 0px;
+  }
+  #home-header img {
+    height: 135px;
   }
 }
