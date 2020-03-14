@@ -15,7 +15,7 @@ body {
 }
 
 #app header {
-  height: 93px;
+  height: 100px;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -27,23 +27,28 @@ body {
 #links-right {
   flex-basis: 33.5%;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 #title-center {
   font-family: 'Dancing Script', cursive;
-  font-size: 50px;
+  font-size: 41px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #links-left {
   justify-content: flex-start;
   margin-left: 80px;
+  align-items: flex-end;
 }
 
 #links-right {
   justify-content: flex-end;
   margin-right: 80px;
+  align-items: flex-end;
 }
 #links-right a:hover {
   background-color: #fff2f5;
@@ -62,7 +67,8 @@ body {
 }
 
 #links-left a {
-  padding: 5px 12px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
 }
 
 #links-left a:hover {
@@ -90,7 +96,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 50px;
-  border-bottom: 0.5px lightgray solid;
+  /* border-bottom: 0.5px lightgray solid; */
   border-top: 0.5px lightgray solid;
 }
 #home-header-text {
@@ -99,6 +105,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#home-header-text span {
+  align-self: flex-start;
 }
 #home-header img {
   height: 200px;
@@ -181,11 +191,11 @@ body {
   bottom: 0;
   width: 100%;
   text-align: center;
-  height: 93px;
+  height: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 #footer p {
   width: inherit;
@@ -232,7 +242,7 @@ body {
   }
 
   #home-header {
-    padding: 20px;
+    padding: 40px;
   }
   #home-header-text p {
     font-size: 13px;
@@ -272,12 +282,11 @@ body {
     margin: 0px;
     padding: 0px;
     flex-basis: 50%;
-    height: 50px;
   }
 
   #links-right a,
   #links-left a {
-    margin: 5px;
+    margin: 9px;
     padding: 0px;
   }
   #title-center {
@@ -298,6 +307,9 @@ body {
     order: 2;
     text-align: center;
   }
+  #home-header-text span {
+    align-self: center;
+  }
 
   #home-header {
     padding: 15px;
@@ -305,7 +317,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 10px 0px;
+    padding: 20px 0px;
   }
   #home-header-text p {
     font-size: 11px;

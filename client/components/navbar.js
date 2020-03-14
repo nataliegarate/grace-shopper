@@ -12,7 +12,9 @@ const Navbar = ({handleClick, isLoggedIn}, props) => {
         <Link to="/">CUPCAKES</Link>
         <Link to="/cart">CART</Link>
       </div>
-      <h1 id="title-center">Best Cupcakes</h1>
+      <h1 id="title-center">
+        <i className="fas fa-crown" /> <span>Best Cupcakes</span>
+      </h1>
       <div id="links-right">
         {/* </div> */}
         {isLoggedIn ? (
