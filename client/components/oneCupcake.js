@@ -41,28 +41,33 @@ export class SingleCupcake extends React.Component {
   render() {
     const cupcake = this.props.single
     return (
-      <div className="single-cupcake-container">
-        <div className="single-cupcake-box">
-          <h2 className="headers">{cupcake.name}</h2>
-          <img className="cupcakes" src={cupcake.imageUrl} />
-          <p className="italics">{cupcake.description}</p>
-          <p className="price"> Price: ${cupcake.price}</p>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              className="small-button"
-              type="number"
-              name="quantity"
-              min="1"
-              max="100"
-              value={this.state.quantity}
-              onChange={this.handleChange}
-            />
-            <button type="submit" className="small-button">
-              Add to Cart
-            </button>
-          </form>
-          <div id="back-button">
-            <Link to="/">Back to all cupcakes</Link>
+      <div id="single-cupcake-container">
+        <div id="back-link">
+          <i className="fas fa-chevron-left" />
+          <Link to="/" className="nav-link">
+            Back to Cupcake Flavors
+          </Link>
+        </div>
+        <div id="single-cupcake-content">
+          <img src={cupcake.imageUrl} />
+          <div id="single-cupcake-side">
+            <p className="title">{cupcake.name}</p>
+            <p className="cupcake-availability"> {cupcake.description}</p>
+            <p> EACH: ${cupcake.price}.75</p>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="number"
+                name="quantity"
+                min="1"
+                max="20"
+                value={this.state.quantity}
+                onChange={this.handleChange}
+                className="input-nav-button"
+              />
+              <button className="nav-button" type="submit">
+                Add to Cart
+              </button>
+            </form>
           </div>
         </div>
       </div>

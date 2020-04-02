@@ -1,6 +1,6 @@
 #app {
   font-family: 'Montserrat', sans-serif;
-  color: #7c3a00;
+  /* color: #7c3a00; */
 }
 p {
   line-height: 1.57;
@@ -37,6 +37,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #7c3a00;
 }
 
 #links-left {
@@ -52,28 +53,29 @@ body {
   margin-right: 80px;
   align-items: center;
 }
-#links-right a:hover {
+.nav-button:hover {
   background-color: #fff2f5;
 }
 
-#app header a {
+.nav-link,
+.nav-button {
   font-size: 14px;
   font-weight: 700px;
   letter-spacing: 1.16px;
   text-transform: uppercase;
 }
 
-#links-left a:visited,
-#links-right a:visited {
+.nav-link,
+.nav-button {
   color: #7c3a00;
 }
 
-#links-left a {
+.nav-link {
   padding: 10px 12px;
   margin-bottom: 6px;
 }
 
-#links-left a:hover {
+.nav-link:hover {
   border-bottom: 1px solid #f6a2b6;
 }
 
@@ -91,6 +93,10 @@ body {
   flex-direction: column;
 }
 
+header {
+  border-bottom: 0.5px lightgray solid;
+}
+
 #home-header {
   display: flex;
   flex-direction: row;
@@ -98,8 +104,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 50px;
-  /* border-bottom: 0.5px lightgray solid; */
-  border-top: 0.5px lightgray solid;
 }
 #home-header-text {
   flex-basis: 30%;
@@ -116,7 +120,7 @@ body {
   height: 200px;
   width: auto;
 }
-#home-header span {
+.title {
   color: #000;
   font-size: 30px;
   letter-spacing: 1.5;
@@ -184,6 +188,56 @@ body {
   letter-spacing: 0.6px;
   line-height: 18px;
   margin: 4px;
+}
+
+/* SINGLE CUPCAKE*/
+#single-cupcake-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 30px;
+}
+#back-link {
+  align-self: flex-start;
+}
+#single-cupcake-content {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+#single-cupcake-content img {
+  width: 450px;
+  border-radius: 50%;
+  padding: 10px;
+}
+#single-cupcake-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#single-cupcake-side .title {
+  align-self: center;
+  margin: 10px;
+}
+#single-cupcake-side p {
+  margin: 5px;
+}
+#single-cupcake-side form {
+  margin-top: 5px;
+}
+
+.input-nav-button {
+  font-size: 14px;
+  font-weight: 700px;
+  letter-spacing: 1.16px;
+  text-transform: uppercase;
+  color: #7c3a00;
+  padding: 12px 24px;
+  border: 1px solid #f6a2b6;
+  margin: 5px;
 }
 
 #footer {

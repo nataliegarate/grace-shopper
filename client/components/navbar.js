@@ -9,8 +9,12 @@ const Navbar = ({handleClick, isLoggedIn}, props) => {
   return (
     <header role="banner">
       <div id="links-left">
-        <Link to="/">CUPCAKES</Link>
-        <Link to="/cart">CART</Link>
+        <Link className="nav-link" to="/">
+          CUPCAKES
+        </Link>
+        <Link className="nav-link" to="/cart">
+          CART
+        </Link>
       </div>
       <h1 id="title-center">
         <i className="fas fa-crown" /> <span>Best Cupcakes</span>
