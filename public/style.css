@@ -40,15 +40,17 @@ body {
 }
 
 #links-left {
+  padding-top: 45px;
   justify-content: flex-start;
   margin-left: 80px;
-  align-items: flex-end;
+  align-items: center;
 }
 
 #links-right {
+  padding-top: 30px;
   justify-content: flex-end;
   margin-right: 80px;
-  align-items: flex-end;
+  align-items: center;
 }
 #links-right a:hover {
   background-color: #fff2f5;
