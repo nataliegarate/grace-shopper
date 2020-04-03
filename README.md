@@ -1,3 +1,6 @@
+
+<span style="background-color:pink">
+
 # Best Cupcakes
 An e-commerce website that sells delicious cupcakes!
 
@@ -16,3 +19,4 @@ This started as a group project with myself and 3 other software engineers. Afte
 5. 'npm run dev' will bring up the website on localhost:8080
 
 <img src ='https://i.ibb.co/R3ZN3BG/Screen-Shot-2020-04-03-at-4-23-31-PM.png' />
+</span>
