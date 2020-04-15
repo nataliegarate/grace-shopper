@@ -317,6 +317,9 @@ header {
   #allCupcakesContainer {
     width: 800px;
   }
+  #single-cupcake-content img {
+    width: 350px;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -413,6 +416,12 @@ header {
   #footer p {
     font-size: 11px;
   }
+  form .nav-button {
+    border: 1px solid #f6a2b6;
+    margin: 5px;
+    padding: 12px 24px;
+    background-color: white;
+  }
 
   @media only screen and (max-width: 450px) {
     #home-header img {
@@ -420,6 +429,22 @@ header {
     }
     #home-header-text {
       width: 90%;
+    }
+    #single-cupcake-content img {
+      width: 250px;
+    }
+    #single-cupcake-side .title {
+      font-size: 20px;
+    }
+    #single-cupcake-container {
+      padding: 20px;
+      padding-bottom: 0px;
+    }
+    .nav-link {
+      font-size: 12px;
+    }
+    #links-right .nav-button {
+      font-size: 12px;
     }
   }
 }
