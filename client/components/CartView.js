@@ -21,52 +21,50 @@ class CartView extends React.Component {
       return sumTotal
     }
     return (
-      <div>
-        <h2 className="headers">Your Shopping Cart</h2>
-        <div className="cart">
-          {this.props.order.map((cupcakeObj, i) => (
-            <div id="cupcake-container" key={i}>
-              <img src={cupcakeObj.imageUrl} className="cupcakes" />
-              <div id="sub-container">
-                <p>Cupcake: {cupcakeObj.name} </p>
-                <p>Price: ${cupcakeObj.price} </p>
-                <p>
-                  {' '}
-                  Quantity: {cupcakeObj.quantity}{' '}
-                  {cupcakeObj.quantity === 1 ? 'cupcake' : 'cupcakes'} ($
-                  {cupcakeObj.price * cupcakeObj.quantity})
-                </p>
-                <button
-                  type="submit"
-                  onClick={() => this.props.deleteOrderThunk(cupcakeObj.id)}
-                  className="small-button"
-                >
-                  Remove Order
-                </button>
-              </div>
-            </div>
-          ))}
-          <button
-            type="button"
-            className="small-button"
-            onClick={() => this.props.clearCartThunk()}
-          >
-            Empty Cart
-          </button>
-          <h3 id="total">Your Total: ${total(this.props.order)} </h3>
-
-          {this.props.order.length > 0 && (
+      <div id="cart-view">
+        <h2>Your Shopping Cart</h2>
+        <div id="price">Price</div>
+        {this.props.order.map((cupcakeObj, i) => (
+          <div key={i} className="single-cupcake-order">
+            <img className="group-cupcake-image" src={cupcakeObj.imageUrl} />
             <div>
-              <br />
-
-              <Link to="/checkout">
-                <button type="button" className="confirmButton">
-                  Checkout
-                </button>
-              </Link>
+              <p>Cupcake: {cupcakeObj.name} </p>
+              <p>
+                {' '}
+                Quantity: {cupcakeObj.quantity}{' '}
+                {cupcakeObj.quantity === 1 ? 'cupcake' : 'cupcakes'} ($
+                {cupcakeObj.price * cupcakeObj.quantity})
+              </p>
+              <button
+                type="submit"
+                className="nav-button"
+                onClick={() => this.props.deleteOrderThunk(cupcakeObj.id)}
+              >
+                Remove Order
+              </button>
             </div>
-          )}
-        </div>
+            <div>${cupcakeObj.price}.75 </div>
+          </div>
+        ))}
+        <button
+          type="button"
+          className="nav-button"
+          onClick={() => this.props.clearCartThunk()}
+        >
+          Empty Cart
+        </button>
+        <h3 id="total">Your Total: ${total(this.props.order)} </h3>
+
+        {this.props.order.length > 0 && (
+          <div>
+            <br />
+            <Link to="/checkout">
+              <button type="button" className="nav-button">
+                Checkout
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     )
   }

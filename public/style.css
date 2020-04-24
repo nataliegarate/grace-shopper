@@ -1,7 +1,9 @@
 #app {
   font-family: 'Montserrat', sans-serif;
-  /* color: #7c3a00; */
+  position: relative;
+  min-height: 100vh;
 }
+
 p {
   line-height: 1.57;
   color: #000;
@@ -135,6 +137,7 @@ header {
   align-content: center;
   flex-wrap: wrap;
   width: 1200px;
+  margin-bottom: 60px;
 }
 #allCupcakesContainer a {
   width: 230px;
@@ -151,7 +154,7 @@ header {
   align-items: center;
   flex-direction: column;
 }
-.cupBox img {
+.group-cupcake-image {
   width: 200px;
   height: auto;
   border-radius: 50%;
@@ -197,7 +200,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 30px;
+  padding: 30px 30px 60px 30px;
 }
 #back-link {
   align-self: flex-start;
@@ -240,9 +243,27 @@ header {
   margin: 5px;
 }
 
+/* CART VIEW */
+
+#cart-view {
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-cupcake-order {
+  display: flex;
+  flex-direction: row;
+}
+.cupcake-cart-line {
+  border: 0.5px solid lightgray;
+}
+
 #footer {
   background-color: #7c3a00;
-  position: relative;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -394,6 +415,8 @@ header {
   }
   #allCupcakesContainer {
     width: 100%;
+    margin-bottom: 80px;
+    margin-top: 30px;
   }
   .cupBox {
     display: flex;
@@ -438,7 +461,7 @@ header {
     }
     #single-cupcake-container {
       padding: 20px;
-      padding-bottom: 0px;
+      padding-bottom: 60px;
     }
     .nav-link {
       font-size: 12px;

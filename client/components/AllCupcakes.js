@@ -23,7 +23,7 @@ class AllCupcakes extends React.Component {
           {cupcakes.map(cupcake => (
             <Link to={`/cupcake/${cupcake.id}`}>
               <div key={cupcake.id} className="cupBox">
-                <img src={cupcake.imageUrl} />
+                <img className="group-cupcake-image" src={cupcake.imageUrl} />
                 <span className="cupcake-text">
                   <p className="cupcake-title"> {cupcake.name}</p>
                   <p className="cupcake-availability"> Available Daily!</p>
