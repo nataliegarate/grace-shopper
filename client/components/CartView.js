@@ -23,18 +23,12 @@ class CartView extends React.Component {
     return (
       <div id="cart-view">
         <h2>Your Shopping Cart</h2>
-        <div id="price">Price</div>
         {this.props.order.map((cupcakeObj, i) => (
           <div key={i} className="single-cupcake-order">
             <img className="group-cupcake-image" src={cupcakeObj.imageUrl} />
             <div>
-              <p>Cupcake: {cupcakeObj.name} </p>
-              <p>
-                {' '}
-                Quantity: {cupcakeObj.quantity}{' '}
-                {cupcakeObj.quantity === 1 ? 'cupcake' : 'cupcakes'} ($
-                {cupcakeObj.price * cupcakeObj.quantity})
-              </p>
+              <p> Name: {cupcakeObj.name} </p>
+              <p> Quantity: {cupcakeObj.quantity} </p>
               <button
                 type="submit"
                 className="nav-button"
@@ -43,7 +37,10 @@ class CartView extends React.Component {
                 Remove Order
               </button>
             </div>
-            <div>${cupcakeObj.price}.75 </div>
+            <div>
+              {' '}
+              <p> Price: {cupcakeObj.price}</p>
+            </div>
           </div>
         ))}
         <button
