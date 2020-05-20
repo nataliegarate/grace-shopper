@@ -18,3 +18,4 @@ This started as a group project with myself and 3 other software engineers. Afte
 5. 'npm run dev' will bring up the website on localhost:8080
 
 <img src ='https://i.ibb.co/R3ZN3BG/Screen-Shot-2020-04-03-at-4-23-31-PM.png' />
+<img src ='https://i.ibb.co/99ByBRh/Screen-Shot-2020-05-19-at-11-05-56-PM.png' />
