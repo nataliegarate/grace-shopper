@@ -256,11 +256,55 @@ header {
 .single-cupcake-order {
   display: flex;
   flex-direction: row;
+  width: 800px;
+  justify-content: space-evenly;
 }
 .cupcake-cart-line {
   border: 0.5px solid lightgray;
 }
 
+#empty-cart-button {
+  margin: 30px;
+}
+
+.left-single-item-cart {
+  display: flex;
+  flex: row;
+}
+.left-cart-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.price {
+  margin-top: 22px;
+}
+
+#total-and-checkout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#total {
+  color: #d31245;
+  letter-spacing: 1.31px;
+  line-height: 30px;
+  margin: 20px;
+}
+
+#checkout-button {
+  width: 300px;
+}
+.pink-title {
+  color: #d31245;
+  letter-spacing: 1.31px;
+  line-height: 30px;
+  margin: 20px;
+}
 #footer {
   background-color: #7c3a00;
   position: absolute;
