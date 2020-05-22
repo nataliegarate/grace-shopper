@@ -30,18 +30,17 @@ class CartView extends React.Component {
               <div className="left-cart-info">
                 <p> Name: {cupcakeObj.name} </p>
                 <p> Quantity: {cupcakeObj.quantity} </p>
+                <p> Price: {cupcakeObj.price}.75</p>
+
                 <button
                   type="submit"
                   className="nav-button"
+                  id="remove-button"
                   onClick={() => this.props.deleteOrderThunk(cupcakeObj.id)}
                 >
                   Remove
                 </button>
               </div>
-            </div>
-            <div className="price">
-              {' '}
-              <p> Price: {cupcakeObj.price}.75</p>
             </div>
           </div>
         ))}

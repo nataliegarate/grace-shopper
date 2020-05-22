@@ -258,6 +258,7 @@ header {
   flex-direction: row;
   width: 800px;
   justify-content: space-evenly;
+  align-items: center;
 }
 .cupcake-cart-line {
   border: 0.5px solid lightgray;
@@ -276,6 +277,9 @@ header {
   flex-direction: column;
   justify-content: center;
   padding-left: 10px;
+}
+.left-cart-info p {
+  margin: 4px;
 }
 
 .price {
@@ -448,6 +452,7 @@ header {
     width: 70%;
     margin: 0px;
   }
+
   #home-header span {
     font-size: 15px;
   }
@@ -480,8 +485,31 @@ header {
     justify-content: center;
     align-items: center;
   }
+
+  .single-cupcake-order {
+    flex-direction: column;
+    width: 500px;
+  }
+
+  .single-cupcake-order img {
+    width: 150px;
+  }
+  .pink-title {
+    font-size: 20px;
+  }
+
+  #checkout-button,
+  #empty-cart-button,
+  #remove-button {
+    padding: 6px 12px;
+    border: 1px solid #f6a2b6;
+    margin: 5px;
+    font-size: 12px;
+  }
+
   #footer p {
     font-size: 11px;
+    margin: 10px;
   }
   form .nav-button {
     border: 1px solid #f6a2b6;
@@ -512,6 +540,13 @@ header {
     }
     #links-right .nav-button {
       font-size: 12px;
+    }
+    .single-cupcake-order {
+      flex-direction: column;
+      width: 300px;
+    }
+    #cart-view {
+      padding-bottom: 0px;
     }
   }
 }
