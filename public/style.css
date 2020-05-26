@@ -65,6 +65,7 @@ body {
   font-weight: 700px;
   letter-spacing: 1.16px;
   text-transform: uppercase;
+  background-color: white;
 }
 
 .nav-link,
@@ -252,6 +253,10 @@ header {
   align-items: center;
   justify-content: center;
 }
+#cart-view img {
+  height: 200px;
+  width: auto;
+}
 
 .single-cupcake-order {
   display: flex;
@@ -336,6 +341,18 @@ header {
 
 .form-group label {
   padding: 5px;
+}
+
+#thank-you-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+#thank-you-container img {
+  height: 300px;
 }
 
 #footer {
@@ -546,6 +563,10 @@ header {
   #order-summary {
     width: 275px;
   }
+
+  #thank-you-container img {
+    height: 200px;
+  }
   #footer p {
     font-size: 11px;
     margin: 10px;
@@ -586,6 +607,10 @@ header {
     }
     #cart-view {
       padding-bottom: 0px;
+    }
+    #cart-view img {
+      height: 150px;
+      width: auto;
     }
   }
 }
