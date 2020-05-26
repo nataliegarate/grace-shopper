@@ -18,18 +18,19 @@ export class UserHome extends React.Component {
   render() {
     const email = this.props.email
     return (
-      <div>
-        <h3>Welcome, {email}</h3>
-        <hr />
-        <h4 className="headers">Order History: </h4>
-        {this.props.orderHistory.map(order => (
-          <div key={order.updatedAt}>
-            <p>
-              {order.quantity} x {order.name} (${order.quantity * order.price})
-              purchased on: {order.updatedAt.slice(0, 10)}
-            </p>
-          </div>
-        ))}
+      <div id="user-home">
+        <h2 className="pink-title">Welcome, {email}</h2>
+        <div id="order-history">
+          <h4>Your Order History: </h4>
+          {this.props.orderHistory.map(order => (
+            <div key={order.updatedAt}>
+              <p>
+                {order.quantity} x {order.name} (${order.quantity * order.price}
+                ) purchased on: {order.updatedAt.slice(0, 10)}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     )
   }

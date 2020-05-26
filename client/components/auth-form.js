@@ -9,26 +9,30 @@ import {auth} from '../store'
 const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
   return (
-    <div>
+    <div id="login-signup">
       <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
+        <div className="pink-title" id="form-name">
+          {name}
+        </div>
+
+        <div className="form-item">
+          <label htmlFor="email">Email</label>
           <input name="email" type="text" />
         </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
+        <div className="form-item">
+          <label htmlFor="password">Password</label>
           <input name="password" type="password" />
         </div>
-        <div>
-          <button type="submit">{displayName}</button>
+        <div className="form-item">
+          <center>
+            <button className="nav-button" type="submit">
+              {displayName}
+            </button>
+          </center>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      <a href="/auth/google">{displayName} with Google</a>
+      {/* <a href="/auth/google">{displayName} with Google</a> */}
     </div>
   )
 }

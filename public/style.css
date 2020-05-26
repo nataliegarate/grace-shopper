@@ -355,6 +355,42 @@ header {
   height: 300px;
 }
 
+#login-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+#login-signup label {
+  padding: 15px;
+  font-size: 20px;
+}
+#login-signup input {
+  font-size: 20px;
+}
+#login-signup form {
+  border: 1px solid #f6a2b6;
+  padding: 15px;
+}
+
+.form-item {
+  padding: 15px;
+}
+
+#user-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#form-name {
+  font-weight: 700px;
+  letter-spacing: 1.16px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 #footer {
   background-color: #7c3a00;
   position: absolute;
@@ -611,6 +647,14 @@ header {
     #cart-view img {
       height: 150px;
       width: auto;
+    }
+
+    #login-signup form {
+      padding: 0px;
+    }
+    #login-signup label,
+    #login-signup input {
+      font-size: 15px;
     }
   }
 }
