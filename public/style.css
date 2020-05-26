@@ -309,6 +309,35 @@ header {
   line-height: 30px;
   margin: 20px;
 }
+
+#checkout-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#payment-info,
+#order-summary {
+  border: 1px solid #f6a2b6;
+  padding: 15px;
+  margin: 20px;
+}
+#payment-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-group {
+  padding: 5px;
+}
+
+.form-group label {
+  padding: 5px;
+}
+
 #footer {
   background-color: #7c3a00;
   position: absolute;
@@ -331,6 +360,7 @@ header {
   line-height: 18px;
   text-transform: uppercase;
 }
+
 @media only screen and (max-width: 1140px) {
   /* #allCupcakesContainer {
     width: 900px;
@@ -497,7 +527,7 @@ header {
   .pink-title {
     font-size: 20px;
   }
-
+  #submit-button,
   #checkout-button,
   #empty-cart-button,
   #remove-button {
@@ -507,6 +537,15 @@ header {
     font-size: 12px;
   }
 
+  #checkout-container {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 90px;
+  }
+  #payment-info,
+  #order-summary {
+    width: 275px;
+  }
   #footer p {
     font-size: 11px;
     margin: 10px;

@@ -22,19 +22,20 @@ class CheckOut extends React.Component {
     }
     return (
       <div id="checkout-container">
-        <div id="white-checkout">
-          <h2 id="gray1">Order Summary</h2>
+        <div id="order-summary">
+          <h2 className="pink-title">Order Summary</h2>
           {this.props.order.map(cupcakeObj => (
-            <div id="cart-summary" key={cupcakeObj.id}>
+            <div key={cupcakeObj.id}>
               <p>
-                {cupcakeObj.quantity} x {cupcakeObj.name}{' '}
+                {cupcakeObj.quantity} x {cupcakeObj.name} @ $
+                {cupcakeObj.price * cupcakeObj.quantity}
               </p>
-              <p>${cupcakeObj.price * cupcakeObj.quantity}</p>
             </div>
           ))}
-          <h4 id="total-margin">Your Total: ${total(this.props.order)}</h4>
-          <hr />
-          <h3 id="gray2">Payment Information</h3>
+          <h4> Your Total: ${total(this.props.order)}</h4>
+        </div>
+        <div id="payment-info">
+          <h2 className="pink-title">Payment Information</h2>
           <form>
             <div className="form-group owner">
               <label htmlFor="owner">Owner</label>
@@ -44,7 +45,6 @@ class CheckOut extends React.Component {
               <label htmlFor="cvv">CVV</label>
               <input type="text" className="form-control" id="cvv" />
             </div>
-            <br />
             <div className="form-group" id="card-number-field">
               <label htmlFor="cardNumber">Card Number</label>
               <input type="text" className="form-control" id="cardNumber" />
@@ -83,9 +83,9 @@ class CheckOut extends React.Component {
           </form>
           <Link to="/thankYou">
             <button
+              id="submit-button"
               type="submit"
-              id="bottom-margin"
-              className="confirmButton"
+              className="nav-button"
               onClick={() => this.props.completeOrderThunk()}
             >
               Confirm Order
